@@ -11,12 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { AnimeCollectionComponent } from './anime-collection/anime-collection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeCardComponent,
-    NavBarComponent
+    NavBarComponent,
+    AnimeCollectionComponent
   ],
   imports: [
     BrowserModule,

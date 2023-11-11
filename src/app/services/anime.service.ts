@@ -10,7 +10,7 @@ import { Anime } from '../models/anime';
 export class AnimeService extends DataService<Anime>{
   constructor(http: HttpClient) {
     super(http);
-    this.basePath = 'http://localhost:3000/';
+    this.basePath = 'http://localhost:3000/animes';
   }
  
   getAnimeById(animeId: number): Observable<any> {
@@ -18,4 +18,7 @@ export class AnimeService extends DataService<Anime>{
     return this.http.get(url);
   }
 
+  getAllAnimes(): Observable<Anime[]> {
+    return this.http.get<Anime[]>(this.basePath);
+  }
 }
