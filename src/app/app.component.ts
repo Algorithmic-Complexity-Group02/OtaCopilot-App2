@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnimeCardComponent } from './anime-card/anime-card.component';
 
 @Component({
   selector: 'app-root',
