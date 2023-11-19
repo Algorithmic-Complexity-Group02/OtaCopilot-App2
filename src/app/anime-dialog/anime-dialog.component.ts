@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Inject, Output } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Anime } from '../models/anime';
 
 @Component({
@@ -8,11 +8,19 @@ import { Anime } from '../models/anime';
   styleUrls: ['./anime-dialog.component.css'],
 })
 export class AnimeDialogComponent {
+  @Output() recommendationsClick = new EventEmitter<void>();
 
-  anime: Anime; 
+  anime: Anime;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: { anime: Anime }) {
-    this.anime = data.anime; 
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { anime: Anime },
+    private dialogRef: MatDialogRef<AnimeDialogComponent>
+  ) {
+    this.anime = data.anime;
   }
 
+  onRecommendationsClick() {
+    this.recommendationsClick.emit();
+    this.dialogRef.close();
+  }
 }

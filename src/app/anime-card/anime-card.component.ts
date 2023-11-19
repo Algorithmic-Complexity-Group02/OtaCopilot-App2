@@ -12,12 +12,23 @@ import { Router } from '@angular/router';
 export class AnimeCardComponent {
   @Input() anime!: Anime;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,  private router: Router) {}
 
   openDialog(anime: Anime): void {
     const dialogRef = this.dialog.open(AnimeDialogComponent, {
       width: '85%',
       data: { anime: anime }
     });
+
+    dialogRef.componentInstance.recommendationsClick.subscribe(() => {
+      this.router.navigate(['/recommendations', anime.title]);
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'recommendations') {
+        this.router.navigate(['/recommendations', anime.title]);
+      }
+    });
+
   }
 }

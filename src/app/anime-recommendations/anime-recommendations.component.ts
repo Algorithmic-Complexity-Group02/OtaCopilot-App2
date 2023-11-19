@@ -10,6 +10,7 @@ import { Anime } from '../models/anime';
   styleUrls: ['./anime-recommendations.component.css']
 })
 export class AnimeRecommendationsComponent implements OnInit {
+
   recommendedAnimes: Anime[] = [];
 
   constructor(

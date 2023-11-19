@@ -1,10 +1,18 @@
-<div
-  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16 mx-auto px-20 pb-24 bg-gray-200"
->
-  <app-anime-card
-    *ngFor="let anime of recommendedAnimes"
-    [anime]="anime"
-    class="w-full h-100"
+<div class="container mx-auto px-20 py-8 flex flex-col items-center">
+  <h2 class="text-4xl font-bold mb-6">These are the recommendations:</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16">
+    <app-anime-card
+      *ngFor="let anime of recommendedAnimes"
+      [anime]="anime"
+      class="w-full h-100"
+    ></app-anime-card>
+  </div>
+
+  <a
+    class="self-end mt-6 bg-orange-700 hover:bg-orange-600 text-white rounded-lg duration-300 px-5 py-2.5"
+    routerLink="/"
   >
-  </app-anime-card>
+    Return to home
+  </a>
 </div>
