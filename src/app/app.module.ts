@@ -9,25 +9,30 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AnimeCollectionComponent } from './anime-collection/anime-collection.component';
+import { AnimeDialogComponent } from './anime-dialog/anime-dialog.component';
+import { AnimeRecommendationsComponent } from './anime-recommendations/anime-recommendations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeCardComponent,
     NavBarComponent,
-    AnimeCollectionComponent
+    AnimeCollectionComponent,
+    AnimeDialogComponent,
+    AnimeRecommendationsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -40,8 +40,9 @@
     </button>
   </div>
 </form>
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16  mx-auto px-20 pb-24  bg-gray-200">
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-16  mx-auto px-20 pb-24  bg-gray-200">
   <app-anime-card *ngFor="let anime of animes" [anime]="anime"
-    class="w-full h-100" >
+    class="w-full h-100">
   </app-anime-card>
 </div>

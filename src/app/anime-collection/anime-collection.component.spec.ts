@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AnimeCollectionComponent } from './anime-collection.component';
 
 describe('AnimeCollectionComponent', () => {

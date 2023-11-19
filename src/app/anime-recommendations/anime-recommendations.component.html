@@ -1,0 +1,10 @@
+<div
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-16 mx-auto px-20 pb-24 bg-gray-200"
+>
+  <app-anime-card
+    *ngFor="let anime of recommendedAnimes"
+    [anime]="anime"
+    class="w-full h-100"
+  >
+  </app-anime-card>
+</div>
