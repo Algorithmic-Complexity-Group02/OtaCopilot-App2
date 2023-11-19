@@ -10,12 +10,20 @@ import { Anime } from '../models/anime';
 export class AnimeService extends DataService<Anime>{
   constructor(http: HttpClient) {
     super(http);
-    this.basePath = 'http://localhost:3000/animes';
+    this.basePath = 'http://127.0.0.1:8000/api/v1/animes';
   }
  
   getAnimeById(animeId: number): Observable<any> {
     const url = `${this.basePath}/${animeId}`;
     return this.http.get(url);
+  }
+
+  getRecommendations(animeTitle: string): Observable<Anime[]> {
+    const url = `${this.basePath}/${animeTitle}`;
+    return this.http.get<Anime[]>(url)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   getAllAnimes(): Observable<Anime[]> {

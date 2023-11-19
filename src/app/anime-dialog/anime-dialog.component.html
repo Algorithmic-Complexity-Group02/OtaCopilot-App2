@@ -1,0 +1,38 @@
+<div class="flex items-center p-6 bg-white rounded-lg">
+  <img
+    class="w-1/3 h-auto rounded-md shadow-lg"
+    [src]="anime.img_url"
+    alt="{{ anime.title }}"
+  />
+  <div class="ml-6 flex-grow">
+    <h2 class="text-3xl font-bold mb-4">{{ anime.title }}</h2>
+    <p class="text-gray-600 mb-4">{{ anime.synopsis }}</p>
+    <div class="flex items-center mb-4">
+      <span class="text-gray-700 mr-2 font-semibold">Episodes:</span>
+      <span class="text-lg font-bold ">{{ anime.episodes }}</span>
+    </div>
+    <div class="flex items-center mb-4">
+      <span class="text-gray-700 mr-2 font-semibold">Score:</span>
+      <span class="text-lg font-bold ">{{ anime.score }}</span>
+    </div>
+    <div class="flex items-center mb-4">
+      <span class="text-gray-700 mr-2 font-semibold">Aired:</span>
+      <span class="text-base ">{{ anime.aired }}</span>
+    </div>
+    <div class="flex justify-end space-x-4 mt-4">
+      <a
+        href="{{ anime.link }}"
+        target="_blank"
+        class="self-end mt-6 bg-orange-700 hover:bg-orange-600 text-white rounded-lg duration-300 px-5 py-2.5"
+      >
+        More Info
+      </a>
+      <button
+        class="self-end mt-6 bg-orange-700 hover:bg-orange-600 text-white rounded-lg duration-300 px-5 py-2.5"
+        (click)="onRecommendationsClick()"
+      >
+        Search for Recommendations
+      </button>
+    </div>
+  </div>
+</div>
