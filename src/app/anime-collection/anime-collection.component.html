@@ -62,7 +62,7 @@
       </div>
     </div>
   </body>
-  <form class="w-full md:w-1/2 mx-auto pt-8 pb-8 bg-slate-200">
+  <form [formGroup]="searchForm" (ngSubmit)="searchAnimes()" class="w-full md:w-1/2 mx-auto pt-8 pb-8 bg-slate-200">
     <label
       for="default-search"
       class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -89,8 +89,8 @@
         </svg>
       </div>
       <input
-        type="search"
-        id="default-search"
+        type="text"
+        formControlName="searchTerm"
         class="block w-full p-4 ps-10 text-sm text-gray-900 border border-orange-300 rounded-lg bg-gray-50 focus:ring-orange-500 focus:border-orange-500"
         placeholder="Search Animes"
         required
@@ -103,7 +103,7 @@
       </button>
     </div>
   </form>
-
+  
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-16 mx-auto px-20 pb-24 bg-gray-200"
   >

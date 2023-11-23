@@ -49,6 +49,4 @@ export class DataService<T> {
       this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
-
 }

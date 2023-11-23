@@ -14,6 +14,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AnimeCollectionComponent } from './anime-collection/anime-collection.component';
 import { AnimeDialogComponent } from './anime-dialog/anime-dialog.component';
 import { AnimeRecommendationsComponent } from './anime-recommendations/anime-recommendations.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { AnimeRecommendationsComponent } from './anime-recommendations/anime-rec
     BrowserAnimationsModule,
     MatToolbarModule,
     MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
